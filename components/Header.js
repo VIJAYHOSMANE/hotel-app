@@ -5,22 +5,27 @@ export default class Header extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Testing(header)</Text>
+        <Text style={styles.text}>Testing(header)</Text>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  text: {
+    color: 'white',
+
+  },
   container: {
     position: 'absolute',
-    top: 20,
+    top: 0,
+    height: 60,
+    width: '100%',
+    backgroundColor: 'red',
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     maxHeight: 100,
-    borderRadius: 4,
     borderWidth: 2,
     borderColor: 'red'
   },
