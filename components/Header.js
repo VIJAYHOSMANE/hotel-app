@@ -1,15 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Header from './components/Header';
 
-export default class App extends React.Component {
+export default class Header extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header />
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Text>Testing(header)</Text>
       </View>
     );
   }
@@ -17,9 +13,15 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    position: 'absolute',
+    top: 20,
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    maxHeight: 100,
+    borderRadius: 4,
+    borderWidth: 2,
+    borderColor: 'red'
   },
 });
