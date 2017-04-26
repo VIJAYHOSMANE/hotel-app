@@ -28,12 +28,8 @@ const styles = StyleSheet.create({
   },
   container: {
     flexDirection: 'row',
-    position: 'absolute',
-    bottom: 0,
-    height: 73,
     width: '100%',
     backgroundColor: 'red',
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
     maxHeight: 100,

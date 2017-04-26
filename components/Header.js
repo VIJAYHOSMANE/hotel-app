@@ -7,15 +7,24 @@ export default class Header extends React.Component {
       console.log('hello');
     }
     return (
+      <View>
+      <View style={styles.statusBuffer}></View>
       <View style={styles.container}>
         <Text style={styles.text}>Testing(header)</Text>
         <Button color="white" title={"Info"} onPress={func}/>
+      </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  statusBuffer: {
+    minHeight: 20,
+    maxHeight: 20,
+    width: '100%',
+    backgroundColor: 'red'
+  },
   button: {
     borderWidth: 2,
     borderColor: 'white',
@@ -28,15 +37,12 @@ const styles = StyleSheet.create({
   },
   container: {
     flexDirection: 'row',
-    position: 'absolute',
-    top: 0,
-    height: 73,
+    // position: 'absolute',
     width: '100%',
     backgroundColor: 'red',
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
-    maxHeight: 100,
+    minHeight: 45,
     borderWidth: 2,
     borderColor: 'red'
   },
