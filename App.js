@@ -1,22 +1,29 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, SectionList } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import FlatList from 'react-native/Libraries/Lists/FlatList';
 
 export default class App extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      item: {
+        title: "thetitle"
+      }
+    }
+  }
+
   render() {
+
     return (
       <View style={styles.container}>
         <Header style={styles.header} />
-        <SectionList
-    renderItem={({item}) => <ListItem title={item.title} />}
-    renderSectionHeader={({section}) => <H1 title={section.key} />}
-    sections={[ // homogenous rendering between sections
-      {data: [...], key: 1},
-      {data: [...], key: 2},
-      {data: [...], key: 3},
-    ]}
-  />
+        <FlatList
+  data={[{key: 'a'}, {key: 'b'}]}
+  renderItem={({item}) => <Text>{item.key}</Text>}
+/>
         <Footer />
       </View>
     );
