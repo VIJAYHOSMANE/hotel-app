@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import FlatList from 'react-native/Libraries/Lists/FlatList';
+import FlatList from 'react-native/Libraries/CustomComponents/Lists/FlatList';
 
 export default class App extends React.Component {
   constructor() {
