@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
   sectionHeader: {
     fontSize: 24,
     fontWeight: "800",
+    textAlign: 'center',
   },
   menuItem: {
     fontSize: 18,

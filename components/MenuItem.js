@@ -9,7 +9,9 @@ export default class MenuItem extends React.Component {
     return (
       <View style={styles.wrapper}>
         <View style={styles.controls}>
+          <View>
           <TextInput style={styles.textInput} />
+          </View>
           <Button title="Add To Cart" onPress={submitMenu} color="black"/>
         </View>
         <View style={styles.menuItem}>
@@ -29,6 +31,8 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: 'blue',
     width: '30%',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   menuItem: {
     alignItems: 'center',
@@ -42,6 +46,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderWidth: 0.5,
     borderColor: 'black',
+    height: 150,
   },
   title: {
     fontSize: 18,
@@ -54,6 +59,7 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 12,
     textAlign: 'center',
+    fontStyle: 'italic',
     // width: '100%'
   },
   textInput: {
