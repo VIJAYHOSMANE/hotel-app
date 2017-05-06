@@ -41,7 +41,7 @@ export default class App extends React.Component {
         <SectionList
           style={styles.sectionList}
           renderItem={({item}) => {
-            return <MenuItem name={item.name} description={item.description} /> }}
+            return <MenuItem name={item.name} description={item.description} price={item.price} /> }}
           renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.key}</Text> }
           sections={[this.state.menu.breakfast, this.state.menu.lunch, this.state.menu.dinner]}
           keyExtractor={(item) => item.name}

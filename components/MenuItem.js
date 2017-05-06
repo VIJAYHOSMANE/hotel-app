@@ -10,11 +10,12 @@ export default class MenuItem extends React.Component {
       <View style={styles.wrapper}>
         <View style={styles.controls}>
           <TextInput style={styles.textInput} />
-          <Button title="Add To Cart" onPress={submitMenu}/>
+          <Button title="Add To Cart" onPress={submitMenu} color="black"/>
         </View>
         <View style={styles.menuItem}>
           <Text style={styles.title}>{this.props.name}</Text>
           <Text style={styles.description}>{this.props.description}</Text>
+          <Text style={styles.price}>{this.props.price}</Text>
         </View>
 
       </View>
@@ -28,10 +29,10 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: 'blue',
     width: '30%',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   menuItem: {
+    alignItems: 'center',
+    justifyContent: 'center',
     borderWidth: 0.5,
     borderColor: 'yellow',
     flexDirection: 'column',
@@ -47,10 +48,12 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
     textDecorationLine: 'underline',
+    textAlign: 'center',
     // width: '100%',
   },
   description: {
     fontSize: 12,
+    textAlign: 'center',
     // width: '100%'
   },
   textInput: {
@@ -58,5 +61,5 @@ const styles = StyleSheet.create({
     width: 60,
     borderColor: 'gray',
     borderWidth: 1,
-  }
+  },
 });
