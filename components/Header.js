@@ -42,7 +42,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     minHeight: 45,
-    borderWidth: 2,
-    borderColor: 'red'
   },
 });
