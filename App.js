@@ -17,21 +17,8 @@ export default class App extends React.Component {
 
         dinner: {data: [{"name": "Dinner Item One", "description": "Uncle Terry's Allergy Sneeze Pie", "price": 5.50}, {"name": "Dinner Item Number Two", "description": "Drizzled With Artisanal In-House Crotch-Churned Butter", "price": 40.00}], key: "dinner"}
       }
-
-      // order: {
-      //
-      // }
     }
-
-
-
   }
-
-  // homogenous rendering between sections
-  //  {data: [{"title": "Uncle Benny's Sticky FlapCakes"}, {"title": "Sinktrap Hash"}, {"title": "Cup of Refried Yolks"}], key: "Breakfast"},
-  //  {data: [{"title": "Grandpa's Mashed Balls"}, {"title": "Aged Hanger Steak (Served Moist)"}, {"title": "Aunt Beverly's Double-Stuffed Creamy Taco With Anchovie Remoulade"}], key: "Lunch"},
-  //  {data: [{"title": "Mom's Dry Sausage Served over Pheasant Feathers"}, {"title": "Earnest's Crawdad Boil with Parboiled Nut Crust"}, {"title": "Terry's LogJammed Brat Tower (Served Smothered with Banger Sauce)"}], key: "Dinner"},
-
 
   render() {
 
