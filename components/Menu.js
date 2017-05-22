@@ -2,15 +2,15 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
 
-export default class Info extends React.Component {
+export default class Menu extends React.Component {
   static navigationOptions = {
-    title: 'Info',
+    title: 'Menu',
   };
   render() {
 
     return (
       <View>
-        <Text>Info Test</Text>
+        <Text>Menu Test</Text>
       </View>
     );
   }
