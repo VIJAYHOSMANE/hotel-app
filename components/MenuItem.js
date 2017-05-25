@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, TouchableHighlight } from 'react-native';
 
 export default class MenuItem extends React.Component {
   render() {
@@ -7,46 +7,35 @@ export default class MenuItem extends React.Component {
       console.log("submitMenu");
     }
     return (
-      <View style={styles.wrapper}>
-        <View style={styles.controls}>
-          <View>
-          <TextInput style={styles.textInput} />
-          </View>
-          <Button title="Add To Cart" onPress={submitMenu} color="black"/>
-        </View>
+      <TouchableHighlight onPress={this.props.onPress} underlayColor="white" activeOpacity={1}>
+      {/* <View style={styles.wrapper}> */}
+
         <View style={styles.menuItem}>
           <Text style={styles.title}>{this.props.name}</Text>
           <Text style={styles.description}>{this.props.description}</Text>
           <Text style={styles.price}>{this.props.price}</Text>
         </View>
 
-      </View>
+      {/* </View> */}
+      </TouchableHighlight>
     );
   }
 }
 
 const styles = StyleSheet.create({
-
-  controls: {
-    borderWidth: 0.5,
-    borderColor: 'blue',
-    width: '30%',
-    alignItems: 'center',
-    justifyContent: 'center'
+  wrapper: {
+    borderWidth: 1,
+    borderColor: 'black',
+    height: 150,
+    justifyContent: 'center',
   },
   menuItem: {
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 0.5,
     borderColor: 'yellow',
-    flexDirection: 'column',
-    width: '70%'
-  },
-  wrapper: {
-    flexDirection: 'row',
-    borderWidth: 0.5,
-    borderColor: 'black',
     height: 150,
+    // width: '70%'
   },
   title: {
     fontSize: 18,
@@ -61,11 +50,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontStyle: 'italic',
     // width: '100%'
-  },
-  textInput: {
-    height: 40,
-    width: 60,
-    borderColor: 'gray',
-    borderWidth: 1,
   },
 });
