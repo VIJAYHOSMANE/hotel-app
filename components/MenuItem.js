@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, TouchableHighlight, } from 'react-native';
 
 export default class MenuItem extends React.Component {
   render() {
@@ -21,6 +21,8 @@ export default class MenuItem extends React.Component {
     );
   }
 }
+
+
 
 const styles = StyleSheet.create({
   wrapper: {

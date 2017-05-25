@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput, SectionList } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, SectionList, Dimensions } from 'react-native';
 import MenuItem from './MenuItem';
 
 
@@ -31,7 +31,7 @@ export default class Menu extends React.Component {
     return (
       <View style={styles.container}>
         <SectionList
-          style={styles.sectionList}
+          containerStyle={{ borderWidth: 5 }}
           renderItem={({item}) => {
             return <MenuItem name={item.name} description={item.description} price={item.price} onPress={() => this.toMenuDetail(item)}/> }}
             renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.key}</Text> }
@@ -43,10 +43,17 @@ export default class Menu extends React.Component {
   }
 }
 
+let screenWidth = Dimensions.get("window").width;
+
 const styles = StyleSheet.create({
+  sectionList: {
+    borderWidth: 5,
+    borderColor: 'black',
+  },
   container: {
     height: 500,
-    width: 350,
+    width: screenWidth,
+    alignItems: 'center',
   },
   sectionHeader: {
     textAlign: 'center',
