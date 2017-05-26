@@ -14,13 +14,26 @@ export default class Menu extends React.Component {
 
         dinner: {data: [{"name": "Dinner Item One", "description": "Uncle Terry's Allergy Sneeze Pie", "price": 5.50}, {"name": "Dinner Item Number Two", "description": "Drizzled With Artisanal In-House Crotch-Churned Butter", "price": 40.00}], key: "dinner"}
       }
+      cart: {
+
+      }
     }
     this.toMenuDetail = this.toMenuDetail.bind(this);
+    this.addToCart = this.addToCart.bind(this);
   }
 
   static navigationOptions = {
     title: 'Menu',
   };
+
+  addToCart(orderDetails) {
+    const cart = {...this.state.cart};
+    const timeStamp = Date.now();
+    cart[`orderDetails${timeStamp}`] = orderDetails;
+
+    this.setState({cart});
+
+  }
 
   toMenuDetail(item) {
     console.log("onPress worked");
@@ -33,7 +46,7 @@ export default class Menu extends React.Component {
         <SectionList
           containerStyle={{ borderWidth: 5 }}
           renderItem={({item}) => {
-            return <MenuItem name={item.name} description={item.description} price={item.price} onPress={() => this.toMenuDetail(item)}/> }}
+            return <MenuItem name={item.name} description={item.description} price={item.price} addToCart={this.addToCart} onPress={() => this.toMenuDetail(item)}/> }}
             renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.key}</Text> }
             sections={[this.state.menu.breakfast, this.state.menu.lunch, this.state.menu.dinner]}
             keyExtractor={(item) => item.name}
