@@ -3,19 +3,28 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
 
 export default class MenuDetail extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      itemQty: '',
+    }
+
+    this.getItemQty = this.getItemQty.bind(this);
+  }
 
   static navigationOptions = {
     title: 'MenuDetail',
   };
 
   getItemQty(e) {
+    console.log("this.itemQty", this.itemQty.value);
     e.preventDefault();
 
     const orderDetails = {
-      itemQty: this.itemQty.value;
+      itemQty: this.state.itemQty,
     }
-    this.props.addToCart(orderDetails);
-    this.itemQty.reset();
+    this.props.navigation.state.params.addToCart(orderDetails);
+    // this.itemQty.reset();
   }
 
   render() {
@@ -25,9 +34,9 @@ export default class MenuDetail extends React.Component {
         <Text style={styles.text}>{this.props.navigation.state.params.description}</Text>
         <Text style={styles.text}>{this.props.navigation.state.params.price}</Text>
         <View style={styles.container}>
-          <TextInput style={styles.input} ref={(input)=> this.itemQty = input}></TextInput>
+          <TextInput style={styles.input} onChangeText={(text) => this.setState({itemQty: text})}></TextInput>
         </View>
-        <Button title="Add To Cart" onPress={this.getItemQty.bind(this)}></Button>
+        <Button title="Add To Cart" onPress={this.getItemQty}></Button>
       </View>
     );
   }
