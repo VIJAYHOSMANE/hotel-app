@@ -10,7 +10,7 @@ export default class Cart extends React.Component {
 
     return (
       <View>
-        <Text>Cart Test</Text>
+        <Text>Cart Test {this.props.screenProps.itemQty}</Text>
       </View>
     );
   }

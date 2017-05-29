@@ -8,7 +8,7 @@ export default class App extends React.Component {
   render() {
 
     return (
-      <Tabs />
+      <Tabs screenProps={{"itemQty": 55}}/>
     );
   }
 }
