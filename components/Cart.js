@@ -6,13 +6,20 @@ export default class Cart extends React.Component {
   static navigationOptions = {
     title: 'Cart',
   };
+
+  componentDidMount() {
+    console.log("this.props.screenProps.state.cart", this.props.screenProps.state.cart.hey)
+  }
+
   render() {
 
     return (
       <View>
-        <Text>Cart Test {this.props.screenProps.itemQty}</Text>
+        {Object.keys(this.props.screenProps.state.cart)
+          .map((key) => <CartItem data={this.props.screenProps.state.cart[key]}/>)
+        }
       </View>
-    );
+    )
   }
 }
 

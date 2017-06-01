@@ -17,7 +17,7 @@ export default class MenuDetail extends React.Component {
   };
 
   getItemQty(e) {
-    console.log("this.itemQty", this.itemQty.value);
+    // console.log("this.itemQty", this.itemQty.value);
     e.preventDefault();
 
     const orderDetails = {
