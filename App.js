@@ -15,7 +15,6 @@ export default class App extends React.Component {
       dinner: {data: [{"addToCart": this.addToCart.bind(this), "name": "Dinner Item One", "description": "Uncle Terry's Allergy Sneeze Pie", "price": 5.50}, {"addToCart": this.addToCart.bind(this), "name": "Dinner Item Number Two", "description": "Drizzled With Artisanal In-House Crotch-Churned Butter", "price": 40.00}], key: "dinner"}
     },
     cart: {
-      hey: "ho",
     }
   }
   // this.toMenuDetail = this.toMenuDetail.bind(this);

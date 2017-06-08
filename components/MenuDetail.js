@@ -22,6 +22,10 @@ export default class MenuDetail extends React.Component {
 
     const orderDetails = {
       itemQty: this.state.itemQty,
+      name: this.props.navigation.state.params.name,
+      description: this.props.navigation.state.params.description,
+      price: this.props.navigation.state.params.price
+
     }
     this.props.navigation.state.params.addToCart(orderDetails);
     // this.itemQty.reset();

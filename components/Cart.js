@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import CartItem from './CartItem'
 
 
 export default class Cart extends React.Component {
@@ -15,14 +16,19 @@ export default class Cart extends React.Component {
 
     return (
       <View>
+      <View style={styles.utilityPadding}></View>
+      <View>
         {Object.keys(this.props.screenProps.state.cart)
-          .map((key) => <CartItem data={this.props.screenProps.state.cart[key]}/>)
+          .map((key) => <CartItem key={key} data={this.props.screenProps.state.cart[key]}/>)
         }
+      </View>
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-
+  utilityPadding: {
+    height: 25,
+  }
 });
